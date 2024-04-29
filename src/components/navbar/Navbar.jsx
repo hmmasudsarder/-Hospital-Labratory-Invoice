@@ -14,7 +14,7 @@ import { GiAbstract016 } from "react-icons/gi"; // Importing icon from react-ico
 const Navbar = () => {
   return (
     // Navbar container with flex layout, spaced between, centered items, with specified height, width, and background color
-    <div className="flex justify-between items-center h-[70px] w-[85%] bg-white px-6 text-black">
+    <div className="flex justify-between items-center h-[70px] w-[100%] bg-white px-6 text-black">
       {/* Left section of the Navbar containing menu icon, text, and dropdown icon */}
       <div className="flex items-center gap-x-3 text-xl">
         <FaAlignJustify /> {/* Menu icon */}
