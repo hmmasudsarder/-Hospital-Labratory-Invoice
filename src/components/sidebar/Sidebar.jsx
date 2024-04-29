@@ -13,7 +13,7 @@ import { FaBuromobelexperte } from "react-icons/fa";
 const Sidebar = () => {
   return (
     // Sidebar container with a white background and width of 15%
-    <div className="bg-white w-[15%]">
+    <div className="bg-white w-[15%] border-r border-gray-200">
       {/* Logo section */}
       <div className="logo pt-10 px-4">
         <img src={logo} alt="" />
