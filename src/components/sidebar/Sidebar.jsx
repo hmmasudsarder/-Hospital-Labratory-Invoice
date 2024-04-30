@@ -1,6 +1,12 @@
 // Importing necessary assets and icons
+import { useState } from "react";
 import logo from "../../assets/logo-dark.png";
-import { FaAngleRight, FaCodeBranch, FaMapMarkedAlt } from "react-icons/fa";
+import {
+  FaAngleDown,
+  FaAngleRight,
+  FaCodeBranch,
+  FaMapMarkedAlt,
+} from "react-icons/fa";
 import { FaFileDownload } from "react-icons/fa";
 import { FaCriticalRole } from "react-icons/fa";
 import { FaGift } from "react-icons/fa";
@@ -8,10 +14,21 @@ import { FaGalacticRepublic } from "react-icons/fa";
 import { FaBookmark } from "react-icons/fa";
 import { FaChartBar } from "react-icons/fa";
 import { FaBuromobelexperte } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 // Sidebar component definition
 const Sidebar = () => {
+  const [showFormsOptions, setShowFormsOptions] = useState(false);
+  const [showTablesOptions, setShowTablesOptions] = useState(false);
+
+  const toggleFormsOptions = () => {
+    setShowFormsOptions(!showFormsOptions);
+  };
+
+  const toggleTablesOptions = () => {
+    setShowTablesOptions(!showTablesOptions);
+  };
+
   return (
     // Sidebar container with a white background and width of 15%
     <div className="bg-white w-[15%] border-r border-gray-200">
@@ -54,21 +71,57 @@ const Sidebar = () => {
             <FaAngleRight />
           </li>
           {/* Forms menu item */}
-          <li className="py-4 cursor-pointer flex  items-center text-xl">
+          <li
+            className="py-4 cursor-pointer flex  items-center text-xl"
+            onClick={toggleFormsOptions}
+          >
             <FaBookmark /> <span className="ml-2 w-[150px]">Forms</span>
-            <FaAngleRight />
+            {showFormsOptions ? <FaAngleDown /> : <FaAngleRight />}
           </li>
+          <ul
+            className={`transition-max-height ${
+              showFormsOptions
+                ? "max-h-[200px] transition-all duration-500 ease-in"
+                : "max-h-0 overflow-hidden transition-all duration-500 ease-out"
+            } cursor-pointer`}
+          >
+            <NavLink className="no-underline text-black" to="basicform">
+              <li className="py-1 hover:text-blue-600">Basic Form</li>
+            </NavLink>
+            <NavLink className="no-underline text-black" to="validationForm">
+              <li className="py-1 hover:text-blue-600">Validation</li>
+            </NavLink>
+            <li className="py-1">Advanced</li>
+            <li className="py-1">Editors</li>
+            <li className="py-1">File Upload</li>
+          </ul>
+
           {/* Charts menu item */}
           <li className="py-4 cursor-pointer flex  items-center text-xl">
             <FaChartBar /> <span className="ml-2 w-[150px]">Charts</span>
             <FaAngleRight />
           </li>
           {/* Tables menu item */}
-          <li className="py-4 cursor-pointer flex  items-center text-xl">
+          <li
+            className="py-4 cursor-pointer flex  items-center text-xl"
+            onClick={toggleTablesOptions}
+          >
             <FaBuromobelexperte />{" "}
             <span className="ml-2 w-[150px]">Tables</span>
-            <FaAngleRight />
+            {showTablesOptions ? <FaAngleDown /> : <FaAngleRight />}
           </li>
+          <ul
+            className={`transition-max-height ${
+              showTablesOptions
+                ? "max-h-[200px] transition-all duration-500 ease-in"
+                : "max-h-0 overflow-hidden transition-all duration-500 ease-out"
+            } cursor-pointer`}
+          >
+            <li className="py-1 hover:text-blue-600">Basic Table</li>
+            <NavLink className="no-underline text-black" to="advancedTables">
+              <li className="py-1 hover:text-blue-600">Advanced Table</li>
+            </NavLink>
+          </ul>
           {/* Maps menu item */}
           <li className="py-4 cursor-pointer flex  items-center text-xl">
             <FaMapMarkedAlt /> <span className="ml-2 w-[150px]">Maps</span>
