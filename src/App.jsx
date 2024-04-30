@@ -4,6 +4,8 @@ import AdvancedTables from "./components/tables/AdvancedTables";
 import Home from "./components/pages/Home";
 import BasicForm from "./components/forms/BasicForm";
 
+import ValidationForm from "./components/forms/ValidationForm";
+
 const App = createBrowserRouter([
   {
     path: "/",
@@ -16,6 +18,10 @@ const App = createBrowserRouter([
       {
         path: "/advancedTables",
         element: <AdvancedTables />,
+      },
+      {
+        path: "/validationForm",
+        element: <ValidationForm />,
       },
       {
         path: "/basicform",

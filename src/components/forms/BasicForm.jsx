@@ -16,6 +16,11 @@ const BasicForm = () => {
             Most Common form control, text a placeholder text commonly used to
             demonstrate the visual form of a document or a typeface without
             relying on meaningful content.
+            <span className="text-red-500 mr-1">
+              input types like text, email, password, file, date, month, time,
+              week, number, and URL tel
+            </span>
+            and <span className="text-red-500">color.</span>
           </p>
 
           <div className="flex gap-x-8 w-[100%]">
@@ -103,6 +108,7 @@ const BasicForm = () => {
                   <Form.Label className="font-bold">Number</Form.Label>
                   <Form.Control type="number" />
                 </Form.Group>
+
                 <Form.Group controlId="urlField" className="mb-3">
                   <Form.Label className="font-bold mt-[8px]">URL</Form.Label>
                   <Form.Control type="url" />
