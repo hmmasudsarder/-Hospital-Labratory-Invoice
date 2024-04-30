@@ -4,7 +4,7 @@ This project is a React.js application designed to manage office employees. It i
 
 ## Features
 
-1. **List/Table**: View a table of all employees with relevant details such as name, position, department, etc.
+1. **List/Table**: View a table of all employees with relevant details such as ID, name, Phone Number, Age, Company.
 2. **Create Form**: Add new employee records with required information using a form.
 3. **Update Form**: Modify existing employee information through an update form.
 
@@ -36,7 +36,8 @@ To run this application locally, follow these steps:
    npm run dev
    ```
 
-5. Open your browser and visit [http://localhost:3000](http://localhost:3000) to view the application.
+5. Visit Local [http://localhost:5173/] to view the application.
+6. Visit Live [https://extraordinary-mandazi-23baa5.netlify.app/] to view the application.
 
 ## Technologies Used
 
