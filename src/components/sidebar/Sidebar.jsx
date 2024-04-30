@@ -8,6 +8,7 @@ import { FaGalacticRepublic } from "react-icons/fa";
 import { FaBookmark } from "react-icons/fa";
 import { FaChartBar } from "react-icons/fa";
 import { FaBuromobelexperte } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 // Sidebar component definition
 const Sidebar = () => {
@@ -16,7 +17,9 @@ const Sidebar = () => {
     <div className="bg-white w-[15%] border-r border-gray-200">
       {/* Logo section */}
       <div className="logo pt-10 px-4">
-        <img src={logo} alt="" />
+        <Link to="/">
+          <img className="cursor-pointer" src={logo} alt="" />
+        </Link>
       </div>
       {/* Sidebar content section */}
       <div>
